@@ -12,8 +12,6 @@ namespace IndustrialFarmer
 {
     public class IndustrialFarmerMultiDisplay : ModTowerDisplay<IndustrialFarmer>
     {
-        public override float Scale => 1.05f;
-
         private readonly int tier;
 
         public IndustrialFarmerMultiDisplay()
@@ -25,13 +23,15 @@ namespace IndustrialFarmer
             tier = t;
         }
 
+        public override float Scale => 1.05f;
+
         public override string Name => GetType().Name + tier;
 
         public override string BaseDisplay =>
             GetDisplay(TowerType.EngineerMonkey, tier > 2 ? 3 : 0, tier <= 2 ? tier : 0);
 
         /// <summary>
-        /// tiers[0] is the Hero's level
+        ///     tiers[0] is the Hero's level
         /// </summary>
         /// <param name="tiers"></param>
         /// <returns></returns>
@@ -94,7 +94,7 @@ namespace IndustrialFarmer
                     pitchforkRenderer.bones = boneNames.Select(node.GetBone).ToIl2CppReferenceArray();
                     node.genericRenderers = node.genericRenderers.AddTo(pitchforkRenderer);
                 }
-                
+
                 node.genericRendererLayers = new Il2CppStructArray<int>(tier == 4 ? 5 : 4);
                 node.RecalculateGenericRenderers();
             });

@@ -4,9 +4,9 @@
 
 This is my example custom hero for Bloons TD 6.
 
-<img src="https://media.discordapp.net/attachments/800115046134186026/920500678412103790/unknown.png">
+<img src="https://raw.githubusercontent.com/doombubbles/IndustrialFarmer/main/image.png">
 
-Levels
+### Levels
 
 1. Collects nearby bananas. Your next Banana Farm is free.
 2. Collected Bananas are worth 5% more.
@@ -28,6 +28,12 @@ Levels
 18. Further increased range.
 19. Collected Bananas Crates are now worth 20% more.
 20. Green Revolution affects even more Bloons and has reduced cooldown.
+
+### Current Known Issues
+
+- Pitchfork disappears when loading game from save
+- Portrait sometimes doesn't load
+- Discounts rely on TowerManager patch, which MelonLoader has issues with sometimes
 
 **Changelog**
 

@@ -29,7 +29,7 @@ namespace IndustrialFarmer
         public override int Abilities => 2;
 
         /// <summary>
-        /// <seealso cref="TowerCreation.InputManager_CreateTowerAt.Postfix"/>
+        ///     <seealso cref="TowerCreation.InputManager_CreateTowerAt.Postfix" />
         /// </summary>
         /// <param name="towerModel"></param>
         public override void ModifyBaseTowerModel(TowerModel towerModel)

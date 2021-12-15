@@ -1,13 +1,11 @@
-﻿using Assets.Scripts.Models.Bloons;
-using Assets.Scripts.Simulation.Bloons;
+﻿using Assets.Scripts.Simulation.Bloons;
 using Assets.Scripts.Simulation.Towers.Projectiles.Behaviors;
 using HarmonyLib;
-using MelonLoader;
 
 namespace IndustrialFarmer.Patches
 {
     /// <summary>
-    /// For some reason the MorphBloon behavior doesn't even use it's own bloonId parameter lol
+    ///     For some reason the MorphBloon behavior doesn't even use it's own bloonId parameter lol
     /// </summary>
     public class BloonMorphing
     {
@@ -21,8 +19,8 @@ namespace IndustrialFarmer.Patches
             {
                 bloonId = __instance.morphBloonModel.bloonId;
             }
-            
-            
+
+
             [HarmonyPostfix]
             internal static void Postfix(MorphBloon __instance)
             {
@@ -42,8 +40,6 @@ namespace IndustrialFarmer.Patches
                 }
             }
         }
-
-
 
 
         [HarmonyPatch(typeof(CosmeticHelper), nameof(CosmeticHelper.GetBloonModel))]

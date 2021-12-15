@@ -2,20 +2,15 @@
 using Assets.Scripts.Models.Towers;
 using Assets.Scripts.Models.Towers.Behaviors;
 using Assets.Scripts.Models.Towers.Behaviors.Abilities.Behaviors;
-using Assets.Scripts.Models.Towers.Behaviors.Attack;
 using Assets.Scripts.Models.Towers.Behaviors.Attack.Behaviors;
-using Assets.Scripts.Models.Towers.Behaviors.Emissions;
 using Assets.Scripts.Models.Towers.Filters;
 using Assets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Assets.Scripts.Models.Towers.TowerFilters;
-using Assets.Scripts.Models.Towers.Weapons;
 using Assets.Scripts.Unity;
-using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Towers;
 using BTD_Mod_Helper.Extensions;
 using IndustrialFarmer.Patches;
 using UnhollowerBaseLib;
-using UnhollowerRuntimeLib;
 
 namespace IndustrialFarmer
 {
@@ -84,7 +79,7 @@ namespace IndustrialFarmer
                 projectile.GetBehavior<ProjectileFilterModel>().filters = projectile
                     .GetBehavior<ProjectileFilterModel>().filters
                     .RemoveItemOfType<FilterModel, FilterWithChanceModel>();
-                projectile.collisionPasses = new[] { -1, 0 };
+                projectile.collisionPasses = new[] {-1, 0};
                 projectile.filters = projectile.GetBehavior<ProjectileFilterModel>().filters;
                 projectile.radius = 50;
                 projectile.AddBehavior(dot);
@@ -104,7 +99,7 @@ namespace IndustrialFarmer
                     new Il2CppReferenceArray<TowerFilterModel>(new TowerFilterModel[]
                     {
                         new FilterInBaseTowerIdModel("FilterInBaseTowerIdModel_",
-                            new Il2CppStringArray(new[] { TowerType.BananaFarm }))
+                            new Il2CppStringArray(new[] {TowerType.BananaFarm}))
                     })));
             }
         }
@@ -187,7 +182,7 @@ namespace IndustrialFarmer
             public override void ApplyUpgrade(TowerModel towerModel)
             {
                 var bma = Game.instance.model.GetTower(TowerType.Alchemist, 0, 0, 5);
-                var techTerror = Game.instance.model.GetTower(TowerType.SuperMonkey, 0, 4, 0);
+                var techTerror = Game.instance.model.GetTower(TowerType.SuperMonkey, 0, 4);
 
                 var shrink = bma.GetAttackModel(2).Duplicate();
 
@@ -302,8 +297,8 @@ namespace IndustrialFarmer
                 attackFilterModel.filters = filterModels.ToIl2CppReferenceArray();
             }
         }
-        
-        
+
+
         public class Level16 : ModHeroLevel<IndustrialFarmer>
         {
             public override string Description => "Banana Farms in radius and their upgrades now cost 10% less.";
@@ -368,10 +363,9 @@ namespace IndustrialFarmer
             {
                 var abilityModel = towerModel.GetAbility(1);
                 abilityModel.Cooldown = 45;
-                
+
                 var projectile = abilityModel.GetDescendant<CreateProjectileOnExhaustFractionModel>().projectile;
                 projectile.pierce += 100;
-                
             }
         }
     }

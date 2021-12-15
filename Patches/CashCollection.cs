@@ -9,7 +9,9 @@ namespace IndustrialFarmer.Patches
 {
     public class CashCollection
     {
-        private static readonly string[] CrateGUIDs = { "88442e0b3684e3446aaa70a036da69c9", "0d60d713eef3d3043915b89b35b04670"};
+        private static readonly string[] CrateGUIDs =
+            {"88442e0b3684e3446aaa70a036da69c9", "0d60d713eef3d3043915b89b35b04670"};
+
         private static float bananaMultiplier = 1f;
         private static float bananaCrateMultiplier = 1f;
 
@@ -72,6 +74,7 @@ namespace IndustrialFarmer.Patches
                     cashModel.maximum *= bananaMultiplier;
                     cashModel.minimum *= bananaMultiplier;
                 }
+
                 __instance.UpdatedModel(cashModel);
                 return true;
             }

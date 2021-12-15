@@ -1,13 +1,10 @@
-﻿using System;
-using Assets.Scripts.Models.Towers;
+﻿using Assets.Scripts.Models.Towers;
 using Assets.Scripts.Simulation.Input;
 using Assets.Scripts.Simulation.Towers;
 using Assets.Scripts.Simulation.Towers.Behaviors;
 using Assets.Scripts.Unity.Bridge;
-using BTD_Mod_Helper.Extensions;
 using HarmonyLib;
 using Il2CppSystem.Collections.Generic;
-using MelonLoader;
 using BuffQuery = Assets.Scripts.Simulation.Towers.Buffs.BuffQuery;
 
 namespace IndustrialFarmer.Patches
@@ -15,8 +12,8 @@ namespace IndustrialFarmer.Patches
     public class Discounts
     {
         public const string IndustrialFarmerDiscount = "IndustrialFarmerDiscount";
-        
-        
+
+
         private static TowerModel discountingTower;
 
 
@@ -35,8 +32,6 @@ namespace IndustrialFarmer.Patches
         }
 
 
-
-        
         [HarmonyPatch(typeof(TowerInventory), nameof(TowerInventory.GetTowerDiscount))]
         internal class TowerInventory_GetTowerDiscount
         {
@@ -54,7 +49,8 @@ namespace IndustrialFarmer.Patches
             [HarmonyPostfix]
             internal static void Postfix(TowerManager __instance, ref Dictionary<string, List<DiscountZone>> __result)
             {
-                if (__result != null && discountingTower != null &&
+                if (__result != null &&
+                    discountingTower != null &&
                     discountingTower.baseId != TowerType.BananaFarm)
                 {
                     if (__result.ContainsKey(IndustrialFarmerDiscount))
@@ -62,12 +58,12 @@ namespace IndustrialFarmer.Patches
                         __result[IndustrialFarmerDiscount].Clear();
                     }
                 }
-                
+
                 discountingTower = null;
             }
         }
-        
-        
+
+
         [HarmonyPatch(typeof(Tower), nameof(Tower.AddDiscountZoneBuffs))]
         internal class Tower_AddDiscountZoneBuffs
         {
@@ -81,7 +77,7 @@ namespace IndustrialFarmer.Patches
                         if (buffQuery != null && buffQuery.buffIndicator.name.Contains(nameof(IndustrialFarmer)))
                         {
                             buffQuery.canCurrentlyBuff = false;
-                        }   
+                        }
                     }
                 }
             }

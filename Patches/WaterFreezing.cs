@@ -34,7 +34,8 @@ namespace IndustrialFarmer.Patches
             [HarmonyPostfix]
             internal static void Postfix(FreezeNearbyWater __instance, ref bool __result)
             {
-                if (__instance.tower.towerModel?.GetModTower() is IndustrialFarmer && currentTowerModel != null &&
+                if (__instance.tower.towerModel?.GetModTower() is IndustrialFarmer &&
+                    currentTowerModel != null &&
                     currentTowerModel.baseId != TowerType.BananaFarm)
                 {
                     __result = false;

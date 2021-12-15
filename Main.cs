@@ -1,20 +1,9 @@
-﻿using System.Diagnostics;
-using System.Linq;
-using Assets.Scripts.Models;
-using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Simulation.Input;
-using Assets.Scripts.Simulation.Towers.Behaviors;
-using Assets.Scripts.Simulation.Towers.Projectiles;
-using Assets.Scripts.Simulation.Towers.Projectiles.Behaviors;
-using Assets.Scripts.Unity;
-using BTD_Mod_Helper;
-using BTD_Mod_Helper.Api;
-using BTD_Mod_Helper.Extensions;
+﻿using BTD_Mod_Helper;
 using HarmonyLib;
 using MelonLoader;
-using UnityEngine;
+using Main = IndustrialFarmer.Main;
 
-[assembly: MelonInfo(typeof(IndustrialFarmer.Main), "Industrial Farmer", "0.0.0", "doombubbles")]
+[assembly: MelonInfo(typeof(Main), "Industrial Farmer", "0.0.0", "doombubbles")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 [assembly: MelonPriority(Priority.High)]
 
@@ -22,6 +11,5 @@ namespace IndustrialFarmer
 {
     public class Main : BloonsTD6Mod
     {
-        
     }
 }
