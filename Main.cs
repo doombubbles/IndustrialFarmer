@@ -22,5 +22,6 @@ namespace IndustrialFarmer
 {
     public class Main : BloonsTD6Mod
     {
+        
     }
 }

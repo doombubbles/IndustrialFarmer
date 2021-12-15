@@ -112,7 +112,7 @@ namespace IndustrialFarmer
 
         public class Level5 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "Banana Farms can be placed on nearby water";
+            public override string Description => "Banana Farms can be placed on nearby water.";
 
             public override int Level => 5;
 
@@ -138,7 +138,7 @@ namespace IndustrialFarmer
 
         public class Level7 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "Range is increased";
+            public override string Description => "Range is increased.";
 
             public override int Level => 7;
 
@@ -319,7 +319,7 @@ namespace IndustrialFarmer
 
         public class Level17 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "Bloon Pesticide's damage over time is massively increased";
+            public override string Description => "Bloon Pesticide's damage over time is massively increased.";
 
             public override int Level => 17;
 
