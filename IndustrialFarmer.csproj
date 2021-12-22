@@ -77,7 +77,12 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="IndustralFarmerMultiDisplay.cs" />
+        <Compile Include="Displays\IndustrialFarmerDisplay.cs" />
+        <Compile Include="Displays\IndustrialFarmerDisplay1.cs" />
+        <Compile Include="Displays\IndustrialFarmerDisplay2.cs" />
+        <Compile Include="Displays\IndustrialFarmerDisplay3.cs" />
+        <Compile Include="Displays\IndustrialFarmerDisplay4.cs" />
+        <Compile Include="Displays\IndustrialFarmerDisplay5.cs" />
         <Compile Include="IndustrialFarmer.cs" />
         <Compile Include="Levels.cs" />
         <Compile Include="Main.cs" />

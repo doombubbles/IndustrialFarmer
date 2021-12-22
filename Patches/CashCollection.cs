@@ -24,23 +24,23 @@ namespace IndustrialFarmer.Patches
                 var name = __instance.collectCashZoneModel.name;
                 if (name.Contains(ModContent.UpgradeID<Levels.Level2>()))
                 {
-                    bananaMultiplier = 1.05f;
-                    bananaCrateMultiplier = 1.05f;
-                }
-                else if (name.Contains(ModContent.UpgradeID<Levels.Level9>()))
-                {
                     bananaMultiplier = 1.1f;
                     bananaCrateMultiplier = 1.1f;
                 }
+                else if (name.Contains(ModContent.UpgradeID<Levels.Level9>()))
+                {
+                    bananaMultiplier = 1.15f;
+                    bananaCrateMultiplier = 1.15f;
+                }
                 else if (name.Contains(ModContent.UpgradeID<Levels.Level13>()))
                 {
-                    bananaMultiplier = 1.1f;
-                    bananaCrateMultiplier = 1.15f;
+                    bananaMultiplier = 1.15f;
+                    bananaCrateMultiplier = 1.2f;
                 }
                 else if (name.Contains(ModContent.UpgradeID<Levels.Level19>()))
                 {
-                    bananaMultiplier = 1.1f;
-                    bananaCrateMultiplier = 1.2f;
+                    bananaMultiplier = 1.15f;
+                    bananaCrateMultiplier = 1.25f;
                 }
                 else
                 {

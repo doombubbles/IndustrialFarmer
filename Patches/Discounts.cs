@@ -12,22 +12,17 @@ namespace IndustrialFarmer.Patches
     public class Discounts
     {
         public const string IndustrialFarmerDiscount = "IndustrialFarmerDiscount";
-
-
+        
         private static TowerModel discountingTower;
 
 
-        [HarmonyPatch(typeof(UnityToSimulation), nameof(UnityToSimulation.GetUpgradeCost))]
-        internal class UnityToSimulation_GetUpgradeCost
+        [HarmonyPatch(typeof(TowerToSimulation), nameof(TowerToSimulation.GetUpgradeCost))]
+        internal class TowerToSimulation_GetUpgradeCost
         {
             [HarmonyPrefix]
-            internal static void Prefix(UnityToSimulation __instance, int id)
+            internal static void Prefix(TowerToSimulation __instance)
             {
-                var towerFromId = __instance.GetTowerFromId(id);
-                if (towerFromId != null)
-                {
-                    discountingTower = towerFromId.towerModel;
-                }
+                discountingTower = __instance.Def;
             }
         }
 
@@ -41,8 +36,7 @@ namespace IndustrialFarmer.Patches
                 discountingTower = def;
             }
         }
-
-
+        
         [HarmonyPatch(typeof(TowerManager), nameof(TowerManager.GetZoneDiscount))]
         internal class TowerManager_GetZoneDiscount
         {

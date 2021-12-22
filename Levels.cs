@@ -18,7 +18,7 @@ namespace IndustrialFarmer
     {
         public class Level2 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "Collected Bananas are worth 5% more.";
+            public override string Description => "Collected Bananas are worth 10% more.";
 
             public override int Level => 2;
 
@@ -119,15 +119,13 @@ namespace IndustrialFarmer
 
         public class Level6 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "Banana Farms in radius and their upgrades cost 5% less.";
+            public override string Description => "All Banana Farms in radius get tier 2 upgrades for free.";
 
             public override int Level => 6;
 
             public override void ApplyUpgrade(TowerModel towerModel)
             {
-                towerModel.AddBehavior(new DiscountZoneModel("DiscountZoneModel_", .05f, 1,
-                    Discounts.IndustrialFarmerDiscount,
-                    "IndustrialFarmer", false, 0, "IndustrialFarmer", GetTextureGUID("IndustrialFarmer-Icon")));
+                towerModel.GetBehavior<FreeUpgradeSupportModel>().upgrade = 2;
             }
         }
 
@@ -146,19 +144,21 @@ namespace IndustrialFarmer
 
         public class Level8 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "All Banana Farms in radius get tier 2 upgrades for free.";
+            public override string Description => "Banana Farms in radius and their upgrades cost 10% less.";
 
             public override int Level => 8;
 
             public override void ApplyUpgrade(TowerModel towerModel)
             {
-                towerModel.GetBehavior<FreeUpgradeSupportModel>().upgrade = 2;
+                towerModel.AddBehavior(new DiscountZoneModel("DiscountZoneModel_", .1f, 1,
+                    Discounts.IndustrialFarmerDiscount,
+                    "IndustrialFarmer", false, 0, "IndustrialFarmer", GetTextureGUID("IndustrialFarmer-Icon")));
             }
         }
 
         public class Level9 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "Collected Bananas are now worth 10% more.";
+            public override string Description => "Collected Bananas are now worth 15% more.";
 
             public override int Level => 9;
 
@@ -243,7 +243,7 @@ namespace IndustrialFarmer
 
         public class Level13 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "Collected Bananas Crates are now worth 15% more.";
+            public override string Description => "Collected Bananas Crates are now worth 20% more.";
 
             public override int Level => 13;
 
@@ -280,9 +280,22 @@ namespace IndustrialFarmer
 
         public class Level15 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "Green Revolution can hit more Bloons, including ZOMGs and DDTs.";
+            public override string Description => "Banana Farms in radius and their upgrades now cost 20% less.";
 
             public override int Level => 15;
+
+            public override void ApplyUpgrade(TowerModel towerModel)
+            {
+                towerModel.GetBehavior<DiscountZoneModel>().discountMultiplier = .2f;
+            }
+        }
+
+
+        public class Level16 : ModHeroLevel<IndustrialFarmer>
+        {
+            public override string Description => "Green Revolution can hit more Bloons, including ZOMGs and DDTs.";
+
+            public override int Level => 16;
 
             public override void ApplyUpgrade(TowerModel towerModel)
             {
@@ -297,20 +310,6 @@ namespace IndustrialFarmer
                 attackFilterModel.filters = filterModels.ToIl2CppReferenceArray();
             }
         }
-
-
-        public class Level16 : ModHeroLevel<IndustrialFarmer>
-        {
-            public override string Description => "Banana Farms in radius and their upgrades now cost 10% less.";
-
-            public override int Level => 16;
-
-            public override void ApplyUpgrade(TowerModel towerModel)
-            {
-                towerModel.GetBehavior<DiscountZoneModel>().discountMultiplier = .1f;
-            }
-        }
-
 
         public class Level17 : ModHeroLevel<IndustrialFarmer>
         {
@@ -343,7 +342,7 @@ namespace IndustrialFarmer
 
         public class Level19 : ModHeroLevel<IndustrialFarmer>
         {
-            public override string Description => "Collected Bananas Crates are now worth 20% more.";
+            public override string Description => "Collected Bananas Crates are now worth 25% more.";
 
             public override int Level => 19;
 
