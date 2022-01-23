@@ -71,10 +71,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="ModHelperData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FasterForward.dll" />
+    <EmbeddedResource Include="Icon.png" />
     <Content Include="README.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
@@ -83,9 +85,9 @@
   <Target Name="BeforeBuild">
   </Target>
   -->
-  <Target Name="AfterBuild">
-    <Exec Command="copy /Y &quot;C:\Users\James\RiderProjects\$(MSBuildProjectName)\obj\Debug\$(MSBuildProjectName).dll&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods\FasterForward.dll&quot;" />
-    <Exec Command="copy /Y &quot;C:\Users\James\RiderProjects\$(MSBuildProjectName)\obj\Debug\$(MSBuildProjectName).dll&quot; &quot;C:\Users\James\Documents\Coding\BTD6\FasterForward\FasterForward.dll&quot;" />
-  </Target>
+  <PropertyGroup>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+    <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods" /y</PostBuildEvent>
+  </PropertyGroup>
 
 </Project>

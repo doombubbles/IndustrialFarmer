@@ -20,7 +20,7 @@ namespace BetterEziliTotem
         private static readonly ModSettingInt AbilityCooldown = new ModSettingInt(5399)
         {
             displayName = "Totem Ability Cooldown",
-            minValue = 0
+            min = 0
         };
 
         public override void OnNewGameModel(GameModel gameModel)
@@ -28,7 +28,7 @@ namespace BetterEziliTotem
             for (var i = 7; i <= 20; i++)
             {
                 var towerModel = gameModel.GetTowerFromId("Ezili " + i);
-                var ability = towerModel.GetAbilites().First(b => b.name.Contains("Totem"));
+                var ability = towerModel.GetAbilities().First(b => b.name.Contains("Totem"));
 
                 ability.livesCost = 0;
                 ability.cooldownFrames = AbilityCooldown;

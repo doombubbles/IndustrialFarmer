@@ -11,7 +11,7 @@ using BTD_Mod_Helper.Extensions;
 using MelonLoader;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(InGameHeroSwitch.Main), "In-Game Hero Switch", "1.0.6", "doombubbles")]
+[assembly: MelonInfo(typeof(InGameHeroSwitch.Main), "In-Game Hero Switch", "1.0.1", "doombubbles")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace InGameHeroSwitch
@@ -23,8 +23,8 @@ namespace InGameHeroSwitch
 
         public override string LatestURL =>
             "https://github.com/doombubbles/BTD6-Mods/blob/main/InGameHeroSwitch/InGameHeroSwitch.dll?raw=true";
-        
-        public static string realSelectedHero;
+
+        private static string realSelectedHero;
 
         private static readonly string Dir = $"{Directory.GetCurrentDirectory()}\\Mods\\InGameHeroSwitch";
         private static readonly string Config = $"{Dir}\\config.txt";

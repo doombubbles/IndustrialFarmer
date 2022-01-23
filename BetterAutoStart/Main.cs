@@ -44,7 +44,7 @@ namespace BetterAutoStart
 
             var images = ShopMenu.instance.goButton.GetComponentsInChildren<Image>();
 
-            foreach (var imageName in Images.Keys.Duplicate())
+            foreach (var imageName in Images.Keys.ToList())
             {
                 if (Images[imageName] == null || images.All(i => i.name != imageName + "(Clone)"))
                 {

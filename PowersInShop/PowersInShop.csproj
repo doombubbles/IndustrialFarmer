@@ -35,7 +35,7 @@
         <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
             <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
-        <Reference Include="BloonsTD6 Mod Helper, Version=2.3.2.0, Culture=neutral, PublicKeyToken=null">
+        <Reference Include="BloonsTD6 Mod Helper, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
           <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\steamapps\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
         </Reference>
         <Reference Include="Il2Cppmscorlib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
@@ -86,6 +86,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Main.cs" />
+        <Compile Include="ModHelperData.cs" />
         <Compile Include="ModPowerTower.cs" />
         <Compile Include="ModTrackPower.cs" />
         <Compile Include="Powers.cs" />

@@ -33,76 +33,132 @@
     </PropertyGroup>
     <ItemGroup>
         <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
-        <Reference Include="BloonsTD6 Mod Helper, Version=2.0.3.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
+        <Reference Include="BloonsTD6 Mod Helper, Version=3.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\steamapps\BloonsTD6\Mods\BloonsTD6 Mod Helper.dll</HintPath>
         </Reference>
         <Reference Include="Il2Cppmscorlib, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Il2Cppmscorlib.dll</HintPath>
         </Reference>
         <Reference Include="MelonLoader, Version=0.4.3.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\MelonLoader.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\MelonLoader.dll</HintPath>
         </Reference>
         <Reference Include="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\mscorlib.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\mscorlib.dll</HintPath>
+        </Reference>
+        <Reference Include="NinjaKiwi.Common, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\steamapps\BloonsTD6\MelonLoader\Managed\NinjaKiwi.Common.dll</HintPath>
         </Reference>
         <Reference Include="System" />
         <Reference Include="System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.dll</HintPath>
         </Reference>
         <Reference Include="System.Core" />
         <Reference Include="System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.Core.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.Core.dll</HintPath>
         </Reference>
         <Reference Include="System.Data" />
         <Reference Include="System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.Data.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.Data.dll</HintPath>
         </Reference>
         <Reference Include="System.IO.Compression, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.IO.Compression.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.IO.Compression.dll</HintPath>
         </Reference>
         <Reference Include="System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.Net.Http.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\System.Net.Http.dll</HintPath>
         </Reference>
         <Reference Include="System.Xml" />
         <Reference Include="UnhollowerBaseLib, Version=0.4.15.4, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnhollowerBaseLib.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnhollowerBaseLib.dll</HintPath>
         </Reference>
         <Reference Include="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Unity.ResourceManager.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Unity.ResourceManager.dll</HintPath>
         </Reference>
         <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Unity.TextMeshPro.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\Unity.TextMeshPro.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.CoreModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.InputLegacyModule.dll</HintPath>
         </Reference>
         <Reference Include="UnityEngine.UI, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-          <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.UI.dll</HintPath>
+            <HintPath>..\..\..\..\Program Files (x86)\Steam\steamapps\common\BloonsTD6\MelonLoader\Managed\UnityEngine.UI.dll</HintPath>
         </Reference>
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Overclock.cs" />
+        <Compile Include="AbilityChoices\Magic\AntiBloon.cs" />
+        <Compile Include="AbilityChoices\Magic\ChampionDarkshift.cs" />
+        <Compile Include="AbilityChoices\Magic\Darkshift.cs" />
+        <Compile Include="AbilityChoices\Magic\GrandSabotage.cs" />
+        <Compile Include="AbilityChoices\Magic\JunglesBounty.cs" />
+        <Compile Include="AbilityChoices\Magic\LegendDarkshift.cs" />
+        <Compile Include="AbilityChoices\Magic\Sabotage.cs" />
+        <Compile Include="AbilityChoices\Magic\SpiritForest.cs" />
+        <Compile Include="AbilityChoices\Magic\SummonLordPhoenix.cs" />
+        <Compile Include="AbilityChoices\Magic\SummonPheonix.cs" />
+        <Compile Include="AbilityChoices\Magic\TechTerror.cs" />
+        <Compile Include="AbilityChoices\Magic\TotalTransformingTonic.cs" />
+        <Compile Include="AbilityChoices\Magic\TransformingTonic.cs" />
+        <Compile Include="AbilityChoices\Military\Bombardment.cs" />
+        <Compile Include="AbilityChoices\Military\EliteSupplyDrop.cs" />
+        <Compile Include="AbilityChoices\Military\FirstStrikeCapability.cs" />
+        <Compile Include="AbilityChoices\Military\GroundZero.cs" />
+        <Compile Include="AbilityChoices\Military\MOABTakedown.cs" />
+        <Compile Include="AbilityChoices\Military\PopAndAwe.cs" />
+        <Compile Include="AbilityChoices\Military\PreemptiveStrike.cs" />
+        <Compile Include="AbilityChoices\Military\SpecialPoperations.cs" />
+        <Compile Include="AbilityChoices\Military\SupplyDrop.cs" />
+        <Compile Include="AbilityChoices\Military\SupportDrop.cs" />
+        <Compile Include="AbilityChoices\Military\TsarBomba.cs" />
+        <Compile Include="AbilityChoices\Military\ZOMGTakedown.cs" />
+        <Compile Include="AbilityChoices\Support\CarpetOfSpikes.cs" />
+        <Compile Include="AbilityChoices\Support\IMFLoan.cs" />
+        <Compile Include="AbilityChoices\Support\MonkeyNomics.cs" />
+        <Compile Include="AbilityChoices\Support\Overclock.cs" />
+        <Compile Include="AbilityChoices\Support\SpikeStorm.cs" />
+        <Compile Include="AbilityChoices\Support\Ultraboost.cs" />
+        <Compile Include="Displays\MiniMoabAssassin.cs" />
+        <Compile Include="Displays\MiniMoabEliminator.cs" />
+        <Compile Include="Extensions.cs" />
+        <Compile Include="ModAbilityChoice.cs" />
+        <Compile Include="AbilityChoices\Military\RocketStorm.cs" />
+        <Compile Include="AbilityChoices\Military\RocketStormMAD.cs" />
+        <Compile Include="AbilityChoices\Primary\AbsoluteZero.cs" />
+        <Compile Include="AbilityChoices\Primary\AssassinateMOAB.cs" />
+        <Compile Include="AbilityChoices\Primary\BladeMaelstrom.cs" />
+        <Compile Include="AbilityChoices\Primary\BombBlitz.cs" />
+        <Compile Include="AbilityChoices\Primary\GlueStorm.cs" />
+        <Compile Include="AbilityChoices\Primary\GlueStrike.cs" />
+        <Compile Include="AbilityChoices\Primary\MoabEliminator.cs" />
+        <Compile Include="AbilityChoices\Primary\PermaCharge.cs" />
+        <Compile Include="AbilityChoices\Primary\PlasmaMonkeyFanClub.cs" />
+        <Compile Include="AbilityChoices\Primary\Snowstorm.cs" />
+        <Compile Include="AbilityChoices\Primary\SuperMaelstrom.cs" />
+        <Compile Include="AbilityChoices\Primary\SuperMonkeyFanClub.cs" />
+        <Compile Include="AbilityChoices\Primary\TurboCharge.cs" />
+        <Compile Include="AbilityChoices\Support\CallToArms.cs" />
+        <Compile Include="AbilityChoices\Support\HomelandDefense.cs" />
+        <Compile Include="OverclockHandler.cs" />
         <Compile Include="Main.cs" />
+        <Compile Include="Patches\Button_OnPointerClick.cs" />
+        <Compile Include="Patches\PierceSupport_Mutate.cs" />
+        <Compile Include="Patches\ShopMenu_Awake.cs" />
+        <Compile Include="Patches\StandardTowerPurchaseButton_UpdateIcon.cs" />
+        <Compile Include="Patches\UpgradeDetails_Update.cs" />
+        <Compile Include="Patches\UpgradeDetails_SetUpgrade.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="Towers.cs" />
     </ItemGroup>
     <ItemGroup>
-      <Content Include="README.md" />
+        <EmbeddedResource Include="Icon.png" />
+        <Content Include="README.md" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-         Other similar extension points exist, see Microsoft.Common.targets.
-    <Target Name="BeforeBuild">
-    </Target>
-    -->
-    <Target Name="AfterBuild">
-        <Exec Command="copy /Y &quot;C:\Users\James\RiderProjects\$(MSBuildProjectName)\obj\Debug\$(MSBuildProjectName).dll&quot; &quot;C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods\$(MSBuildProjectName).dll&quot;" />
-        <Exec Command="copy /Y &quot;C:\Users\James\RiderProjects\$(MSBuildProjectName)\obj\Debug\$(MSBuildProjectName).dll&quot; &quot;C:\Users\James\RiderProjects\$(MSBuildProjectName)\$(MSBuildProjectName).dll&quot;" />
-    </Target>
+    <PropertyGroup>
+        <RunPostBuildEvent>Always</RunPostBuildEvent>
+        <PostBuildEvent>copy "$(TargetDir)$(TargetFileName)" "C:\Program Files (x86)\Steam\steamapps\common\BloonsTD6\Mods" /y</PostBuildEvent>
+    </PropertyGroup>
 
 </Project>

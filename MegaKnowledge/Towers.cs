@@ -426,13 +426,14 @@ namespace MegaKnowledge
         {
             var heliMovementModel = model.GetDescendant<HeliMovementModel>();
 
-            heliMovementModel.maxSpeed *= 5;
-            heliMovementModel.brakeForce *= 5;
-            heliMovementModel.movementForceStart *= 5;
-            heliMovementModel.movementForceEnd *= 5;
+            const int factor = 3;
+            heliMovementModel.maxSpeed *= factor;
+            heliMovementModel.brakeForce *= factor;
+            heliMovementModel.movementForceStart *= factor;
+            heliMovementModel.movementForceEnd *= factor;
             heliMovementModel.movementForceEndSquared =
                 heliMovementModel.movementForceEnd * heliMovementModel.movementForceEnd;
-            heliMovementModel.strafeDistance *= 5;
+            heliMovementModel.strafeDistance *= factor;
             heliMovementModel.strafeDistanceSquared =
                 heliMovementModel.strafeDistance * heliMovementModel.strafeDistance;
         }

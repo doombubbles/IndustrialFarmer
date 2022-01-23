@@ -4,6 +4,7 @@ using Assets.Scripts.Unity.Bridge;
 using Assets.Scripts.Unity.UI_New.InGame;
 using Assets.Scripts.Unity.UI_New.InGame.TowerSelectionMenu.TowerSelectionMenuThemes;
 using BTD_Mod_Helper;
+using BTD_Mod_Helper.Api.Helpers;
 using BTD_Mod_Helper.Extensions;
 using HarmonyLib;
 using UnityEngine;
@@ -33,7 +34,7 @@ namespace PowersInShop.Towers
                 if (tower.worth > 0)
                 {
                     var cash = InGame.instance.GetCash();
-                    var cost = BloonsTD6Mod.CostForDifficulty(Main.TotemRechargeCost, InGame.instance);
+                    var cost = CostHelper.CostForDifficulty(Main.TotemRechargeCost, InGame.instance);
                     if (cash < cost)
                     {
                         return false;
@@ -70,7 +71,7 @@ namespace PowersInShop.Towers
                 if (tower.worth > 0)
                 {
                     __instance.rechargeCostText.SetText("$" +
-                                                        BloonsTD6Mod.CostForDifficulty(Main.TotemRechargeCost,
+                                                        CostHelper.CostForDifficulty(Main.TotemRechargeCost,
                                                             InGame.instance));
                     __instance.rechargeCostText.outlineColor = new Color32(0, 0, 0, 0);
                     __instance.rechargeCostText.color = Color.white;

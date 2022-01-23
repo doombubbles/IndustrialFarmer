@@ -12,12 +12,12 @@ using MelonLoader;
 using PowersInShop.Towers;
 using Main = PowersInShop.Main;
 
-[assembly: MelonInfo(typeof(Main), "Powers In Shop", "2.0.0", "doombubbles")]
+[assembly: MelonInfo(typeof(Main), "Powers In Shop", "2.0.1", "doombubbles")]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace PowersInShop
 {
-    public class Main : BloonsTD6Mod    
+    public class Main : BloonsTD6Mod
     {
         private static readonly ModSettingBool AllowInChimps = false;
         public static readonly ModSettingBool AllowInRestrictedModes = true;
@@ -61,10 +61,10 @@ namespace PowersInShop
                 if (chimps != null)
                 {
                     var chimpsMutators = chimps.mutatorMods.ToList();
-                    var existingLocks = ModContent.GetInstances<ModPowerTower>()
+                    var existingLocks = ModContent.GetContent<ModPowerTower>()
                         .ToDictionary(tower => tower.Id, tower => chimpsMutators.OfType<LockTowerModModel>()
-                                .FirstOrDefault(model => model.towerToLock != tower.Id));
-                    
+                            .FirstOrDefault(model => model.towerToLock != tower.Id));
+
                     if (AllowInChimps)
                     {
                         foreach (var lockTowerModel in existingLocks.Values.Where(lockTowerModel =>

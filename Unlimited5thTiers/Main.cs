@@ -68,7 +68,7 @@ namespace Unlimited5thTiers
                     && __instance.lastSacrificed != __instance.Sim.time.elapsed)
                 {
                     var superMonkeys = __instance.Sim.towerManager.GetTowersByBaseId(TowerType.SuperMonkey).ToList()
-                        .Where(tower => tower != __instance.tower).ToList();
+                        .Where(tower => tower.Id != __instance.tower.Id).ToList();
                     var robocop = superMonkeys.FirstOrDefault(tower => tower.towerModel.tiers[1] == 5);
                     var batman = superMonkeys.FirstOrDefault(tower => tower.towerModel.tiers[2] == 5);
                     if (batman != default && robocop != default)

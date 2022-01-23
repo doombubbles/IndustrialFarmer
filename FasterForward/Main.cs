@@ -5,9 +5,10 @@ using MelonLoader;
 using Assets.Scripts.Utils;
 using BTD_Mod_Helper;
 using BTD_Mod_Helper.Extensions;
+using FasterForward;
 using UnityEngine;
 
-[assembly: MelonInfo(typeof(FasterForward.Main), "Faster Forward", "1.0.2", "doombubbles")]
+[assembly: MelonInfo(typeof(FasterForward.Main), ModHelperData.Name, "1.0.3", ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
 namespace FasterForward
@@ -20,11 +21,11 @@ namespace FasterForward
         public override string LatestURL =>
             "https://github.com/doombubbles/BTD6-Mods/blob/main/FasterForward/FasterForward.dll?raw=true";
 
-        public static int speed = 3;
+        private static int speed = 3;
 
         public override void OnUpdate()
         {
-            int lastSpeed = speed;
+            var lastSpeed = speed;
             if (Input.GetKeyDown(KeyCode.F1))
             {
                 speed = 3;

@@ -33,7 +33,7 @@
 .idea/
 obj/
 AbilityChoice/bin/Debug/BloonsTD6 Mod Helper.xml
-CardMonkey/
-UltimateCrosspathing/
 *.xml
-IndustrialFarmer/
+bin/
+*.user
+.vs/

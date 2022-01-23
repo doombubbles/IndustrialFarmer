@@ -1,6 +1,7 @@
 ﻿using Assets.Scripts.Models;
 using Assets.Scripts.Models.Towers.Mods;
 using BTD_Mod_Helper;
+using BTD_Mod_Helper.Api.Helpers;
 using BTD_Mod_Helper.Api.ModOptions;
 using BTD_Mod_Helper.Extensions;
 using Il2CppSystem.Collections.Generic;
@@ -22,18 +23,18 @@ namespace BetterUltraVision
         private static readonly ModSettingInt UltravisionRangeBonus = new ModSettingInt(6)
         {
             displayName = "Ultravision Range Bonus",
-            minValue = 0
+            min = 0
         };
         
         private static readonly ModSettingInt UltravisionCost = new ModSettingInt(1200)
         {
             displayName = "Ultravision Cost",
-            minValue = 0
+            min = 0
         };
 
         public override void OnNewGameModel(GameModel gameModel, List<ModModel> mods)
         {
-            gameModel.GetUpgrade("Ultravision").cost = CostForDifficulty(UltravisionCost, mods);
+            gameModel.GetUpgrade("Ultravision").cost = CostHelper.CostForDifficulty(UltravisionCost, mods);
             
             foreach (var towerModel in gameModel.towers)
             {
