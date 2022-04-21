@@ -22,6 +22,9 @@ namespace IndustrialFarmer
 
 
         public override string NameStyle => TowerType.Gwendolin; // Yellow colored
+        public override string BackgroundStyle => TowerType.Etienne; // Yellow colored
+        public override string GlowStyle => TowerType.StrikerJones; // Yellow colored
+
 
         public override int MaxLevel => 20;
         public override float XpRatio => 1.0f;

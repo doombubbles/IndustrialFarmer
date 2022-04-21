@@ -47,8 +47,8 @@ namespace IndustrialFarmer
 
                 var dot = glue.GetDescendant<AddBehaviorToBloonModel>().Duplicate();
                 dot.mutationId = "Pesticide";
-                dot.overlayLayer = 2;
-                dot.overlays = glue.GetDescendant<SlowModel>().overlays;
+                // dot.overlayLayer = 2; TODO
+                // dot.overlays = glue.GetDescendant<SlowModel>().overlays;
                 dot.glueLevel = 0;
                 dot.collideThisFrame = true;
 

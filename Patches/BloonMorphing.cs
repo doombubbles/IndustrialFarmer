@@ -28,15 +28,15 @@ namespace IndustrialFarmer.Patches
             }
         }
 
-        [HarmonyPatch(typeof(Bloon), nameof(Bloon.Damage))]
-        internal class Bloon_Damage
+        [HarmonyPatch(typeof(BloonDegradeStepper), nameof(BloonDegradeStepper.GetTotalBloonHealth))]
+        internal static class BloonDegradeStepper_GetTotalBloonHealth
         {
-            [HarmonyPrefix]
-            internal static void Prefix(Bloon __instance, ref float totalAmount)
+            [HarmonyPostfix]
+            private static void Postfix(ref int __result)
             {
                 if (bloonId == "Green")
                 {
-                    totalAmount -= 2;
+                    __result -= 2;
                 }
             }
         }

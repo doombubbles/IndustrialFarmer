@@ -32,6 +32,8 @@ This is my example custom hero for Bloons TD 6.
 
 **Changelog**
 
+v1.0.1 Fixed for v31
+
 v1.0.0 Initial release
 
 v0.0.0 Pre-release

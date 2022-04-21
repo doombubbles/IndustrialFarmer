@@ -15,7 +15,7 @@ namespace IndustrialFarmer.Patches
             {
                 if (towerModel.GetModTower() is IndustrialFarmer)
                 {
-                    __instance.Sim.GetTowerInventory(__instance.id).AddFreeTowers(TowerType.BananaFarm, 1);
+                    __instance.Sim.GetTowerInventory(__instance.id).AddFreeTowers(TowerType.BananaFarm, 1, "", 0);
                 }
             }
         }
