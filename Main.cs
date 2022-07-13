@@ -1,13 +1,15 @@
-﻿using BTD_Mod_Helper;
+﻿global using HarmonyLib;
+global using MelonLoader;
+global using BTD_Mod_Helper.Extensions;
+global using System.Linq;
+using BTD_Mod_Helper;
 using IndustrialFarmer;
-using MelonLoader;
 
-[assembly: MelonInfo(typeof(IndustrialFarmerMod), "Industrial Farmer", "1.0.0", "doombubbles")]
+[assembly: MelonInfo(typeof(IndustrialFarmerMod), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
 
-namespace IndustrialFarmer
+namespace IndustrialFarmer;
+
+public class IndustrialFarmerMod : BloonsTD6Mod
 {
-    public class IndustrialFarmerMod : BloonsTD6Mod
-    {
-    }
 }
