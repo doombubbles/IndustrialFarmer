@@ -29,15 +29,4 @@ This is my example custom hero for Bloons TD 6.
 19. Collected Bananas Crates are now worth 25% more.
 20. Green Revolution affects even more Bloons and has reduced cooldown.
 
-**Changelog**
-
-v1.0.2 Updated for Mod Helper 3.0
-
-v1.0.1 Fixed for v31
-
-v1.0.0 Initial release
-
-v0.0.0 Pre-release
-
-
 
