@@ -1,4 +1,5 @@
-﻿using Assets.Scripts.Models.Towers;
+﻿using System;
+using Assets.Scripts.Models.Towers;
 using Assets.Scripts.Unity.Display;
 using BTD_Mod_Helper.Api.Display;
 using UnhollowerBaseLib;
@@ -9,11 +10,14 @@ namespace IndustrialFarmer.Displays;
 
 public abstract class IndustrialFarmerDisplay : ModTowerDisplay<IndustrialFarmer>
 {
-    public override bool ModifiesUnityObject => true;
-
     public override float Scale => 1.05f;
 
     public override void ModifyDisplayNode(UnityDisplayNode node)
+    {
+        node.RemoveBone("MonkeyRig:Propjectile_R");
+    }
+
+    public override void ModifyDisplayNodeAsync(UnityDisplayNode node, Action onComplete)
     {
         UseNode(GetDisplay(TowerType.BananaFarmer), bananaFarmer =>
         {
@@ -34,9 +38,10 @@ public abstract class IndustrialFarmerDisplay : ModTowerDisplay<IndustrialFarmer
             PostAddPitchfork(node, pitchfork);
 
             node.RecalculateGenericRenderers();
+            
+            onComplete();
         });
 
-        node.RemoveBone("MonkeyRig:Propjectile_R");
     }
 
 

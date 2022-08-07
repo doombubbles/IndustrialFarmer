@@ -28,9 +28,6 @@ public class IndustrialFarmer : ModHero
     public override int MaxLevel => 20;
     public override float XpRatio => 1.0f;
 
-    public override int Abilities => 2;
-
-
     /// <summary>
     ///     <seealso cref="TowerCreation.InputManager_CreateTowerAt.Postfix" />
     /// </summary>

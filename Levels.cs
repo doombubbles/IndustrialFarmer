@@ -8,6 +8,8 @@ using Assets.Scripts.Models.Towers.Filters;
 using Assets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Assets.Scripts.Models.Towers.TowerFilters;
 using Assets.Scripts.Unity;
+using Assets.Scripts.Utils;
+using BTD_Mod_Helper.Api.Enums;
 using BTD_Mod_Helper.Api.Towers;
 using IndustrialFarmer.Patches;
 using UnhollowerBaseLib;
@@ -69,7 +71,7 @@ public class Levels
             attack.RemoveBehavior<TargetLastModel>();
 
             var effectModel = attack.GetDescendant<CreateEffectOnExhaustFractionModel>().effectModel;
-            effectModel.assetId = GetDisplayGUID<PesticideSplatter>();
+            effectModel.assetId = CreatePrefabReference<PesticideSplatter>();
 
             var projectile = attack.GetDescendant<CreateProjectileOnExhaustFractionModel>().projectile;
             projectile.RemoveBehavior<DamageModel>();
@@ -113,7 +115,7 @@ public class Levels
 
         public override void ApplyUpgrade(TowerModel towerModel)
         {
-            towerModel.AddBehavior(new FreezeNearbyWaterModel("FreezeNearbyWaterModel_", towerModel.range, 1, ""));
+            towerModel.AddBehavior(new FreezeNearbyWaterModel("FreezeNearbyWaterModel_", towerModel.range, 1, new PrefabReference()));
         }
     }
 
@@ -195,7 +197,7 @@ public class Levels
 
             var projectile = shrink.GetDescendant<CreateProjectileOnExhaustFractionModel>().projectile;
             projectile.radius = 50;
-            projectile.GetBehavior<MorphBloonModel>().bloonId = "Green";
+            projectile.GetBehavior<MorphBloonModel>().bloonId = BloonType.Green;
             projectile.GetDescendants<FilterInvisibleModel>().ForEach(model => model.isActive = false);
 
             var abilityModel = towerModel.GetAbility().Duplicate();

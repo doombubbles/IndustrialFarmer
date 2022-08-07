@@ -1,12 +1,15 @@
-﻿using Assets.Scripts.Unity.Display;
+﻿using Assets.Scripts.Models.Towers;
+using Assets.Scripts.Unity.Display;
 using UnhollowerBaseLib;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
 namespace IndustrialFarmer.Displays;
 
-public class IndustrialFarmerDisplay5 : IndustrialFarmerDisplay4
+public class IndustrialFarmerDisplay5 : IndustrialFarmerDisplay
 {
+    public override string BaseDisplay => GetDisplay(TowerType.EngineerMonkey, 3);
+    
     public override bool UseForTower(int[] tiers)
     {
         return tiers[0] == 20;
@@ -18,6 +21,7 @@ public class IndustrialFarmerDisplay5 : IndustrialFarmerDisplay4
         SkinnedMeshRenderer pitchforkRenderer;
         string[] boneNames;
         newPitchFork = Object.Instantiate(pitchfork, node.transform.GetChild(0));
+        newPitchFork.name += "2";
         pitchforkRenderer = newPitchFork.GetComponent<SkinnedMeshRenderer>();
         pitchforkRenderer.rootBone = node.GetBone("MonkeyRig:MonkeyJnt_Spine02");
         boneNames = new[]

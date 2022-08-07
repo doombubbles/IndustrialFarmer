@@ -61,7 +61,7 @@ public class CashCollection
         internal static bool Prefix(Cash __instance)
         {
             var cashModel = __instance.cashModel.Duplicate();
-            if (CrateGUIDs.Contains(__instance.projectile.display.displayModel.display))
+            if (CrateGUIDs.Contains(__instance.projectile.display.displayModel.display.guidRef))
             {
                 cashModel.maximum *= bananaCrateMultiplier;
                 cashModel.minimum *= bananaCrateMultiplier;
