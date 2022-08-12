@@ -1,10 +1,13 @@
-<a href="https://github.com/doombubbles/IndustrialFarmer/raw/main/IndustrialFarmer.dll"><img align="right" alt="Download" height="75" src="https://github.com/doombubbles/BTD6-Mods/blob/main/download.png?raw=true"></a>
+<a href="https://github.com/doombubbles/IndustrialFarmer/raw/main/IndustrialFarmer.dll">
+    <img align="left" alt="Icon" height="90" src="IndustrialFarmer-Icon.png">
+    <img align="right" alt="Download" height="75" src="https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/BloonsTD6%20Mod%20Helper/Resources/DownloadBtn.png">
+</a>
 
-# Norman, the Industrial Farmer
+<h1 align="center">Norman, The Industrial Farmer</h1>
 
-This is my example custom hero for Bloons TD 6.
+### This is my example custom hero for Bloons TD 6.
 
-<img src="https://raw.githubusercontent.com/doombubbles/IndustrialFarmer/main/image.png">
+<img src="image.png">
 
 ### Levels
 
@@ -30,13 +33,5 @@ This is my example custom hero for Bloons TD 6.
 20. Green Revolution affects even more Bloons and has reduced cooldown.
 
 
-**Changelog**
-
-v1.0.1 Fixed for v31
-
-v1.0.0 Initial release
-
-v0.0.0 Pre-release
-
-
+[![Requires BTD6 Mod Helper](https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/banner.png)](https://github.com/gurrenm3/BTD-Mod-Helper#readme)
 
