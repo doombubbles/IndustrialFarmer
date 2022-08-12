@@ -1,2 +1,1 @@
-- Fixed for v32.0
-- New portraits
+- Switched to a Tower Creation patch without side effects

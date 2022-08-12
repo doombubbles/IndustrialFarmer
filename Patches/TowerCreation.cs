@@ -1,19 +1,24 @@
 ﻿using Assets.Scripts.Models.Towers;
 using Assets.Scripts.Simulation.Input;
+using Assets.Scripts.Unity.Bridge;
+using BTD_Mod_Helper;
+using BTD_Mod_Helper.Api;
+using BTD_Mod_Helper.Api.Towers;
 
 namespace IndustrialFarmer.Patches;
 
 public class TowerCreation
 {
-    [HarmonyPatch(typeof(InputManager), nameof(InputManager.CreateTowerAt))]
-    internal class InputManager_CreateTowerAt
+    [HarmonyPatch(typeof(UnityToSimulation.CreateTowerAtAction), nameof(UnityToSimulation.CreateTowerAtAction.Run))]
+    internal static class UnityToSimulation_CreateTowerAt
     {
         [HarmonyPostfix]
-        internal static void Postfix(InputManager __instance, TowerModel towerModel)
+        private static void Postfix(UnityToSimulation.CreateTowerAtAction __instance, UnityToSimulation uts)
         {
-            if (towerModel.GetModTower() is IndustrialFarmer)
+            if (__instance.towerModelName.StartsWith(ModContent.GetInstance<IndustrialFarmer>().Id))
             {
-                __instance.Sim.GetTowerInventory(__instance.id).AddFreeTowers(TowerType.BananaFarm, 1, "", 0);
+                uts.Simulation.GetTowerInventory(__instance.initiatingPlayerNumber)
+                    .AddFreeTowers(TowerType.BananaFarm, 1, "", 0);
             }
         }
     }
