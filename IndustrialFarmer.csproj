@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net48</TargetFramework>
+        <TargetFramework>net6</TargetFramework>
         <RootNamespace>IndustrialFarmer</RootNamespace>
         <Configurations>Debug;Release</Configurations>
         <Nullable>enable</Nullable>
@@ -20,6 +20,10 @@
 
     <ItemGroup>
       <None Remove="IndustrialFarmer.dll" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BTD-Mod-Helper\BloonsTD6 Mod Helper\BloonsTD6 Mod Helper.csproj" />
     </ItemGroup>
 
     <Import Project="..\btd6.targets" />

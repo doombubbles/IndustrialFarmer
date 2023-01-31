@@ -1,5 +1,6 @@
-﻿using Assets.Scripts.Simulation.Bloons;
-using Assets.Scripts.Simulation.Towers.Projectiles.Behaviors;
+﻿using Il2Cpp;
+using Il2CppAssets.Scripts.Simulation.Bloons;
+using Il2CppAssets.Scripts.Simulation.Towers.Projectiles.Behaviors;
 
 namespace IndustrialFarmer.Patches;
 

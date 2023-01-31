@@ -8,7 +8,6 @@ on:
 
 env:
   PROJECT_NAME: IndustrialFarmer
-  MOD_HELPER_BRANCH: 3.0_Features
   MELONLOADER_BRANCH: alpha-development
   
   MOD_HELPER_NAME: Btd6ModHelper
@@ -49,7 +48,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           workflow: build.yml
           branch: ${{ env.MELONLOADER_BRANCH }}
-          name: MelonLoader.x64.CI.Release
+          name: MelonLoader.Linux.x64.CI.Release
           repo: LavaGang/MelonLoader
           path: ${{ env.BLOONSTD6 }}
 
@@ -60,7 +59,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: doombubbles/btd6-ci-dependencies
           ref: main
-          path: ${{ env.BLOONSTD6 }}/MelonLoader/Managed
+          path: ${{ env.BLOONSTD6 }}/MelonLoader/I12CppAssemblies
 
 
       - name: Download Latest Mod Helper
@@ -94,7 +93,7 @@ jobs:
           if [ "$RUNNER_OS" == "Windows" ]; then
             choco install -y wget
           fi
-          wget https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/${{ env.MOD_HELPER_BRANCH }}/BloonsTD6%20Mod%20Helper/btd6.targets
+          wget https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/BloonsTD6%20Mod%20Helper/btd6.targets
 
 
       - name: Setup .NET

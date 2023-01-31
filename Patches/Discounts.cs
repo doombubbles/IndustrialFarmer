@@ -1,9 +1,9 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Simulation.Input;
-using Assets.Scripts.Simulation.Towers;
-using Assets.Scripts.Simulation.Towers.Behaviors;
-using Assets.Scripts.Unity.Bridge;
-using BuffQuery = Assets.Scripts.Simulation.Towers.Buffs.BuffQuery;
+﻿using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Simulation.Input;
+using Il2CppAssets.Scripts.Simulation.Towers;
+using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
+using Il2CppAssets.Scripts.Unity.Bridge;
+using BuffQuery = Il2CppAssets.Scripts.Simulation.Towers.Buffs.BuffQuery;
 
 namespace IndustrialFarmer.Patches;
 
