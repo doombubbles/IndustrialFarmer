@@ -1,6 +1,6 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Simulation.Input;
-using Assets.Scripts.Unity.Bridge;
+﻿using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Simulation.Input;
+using Il2CppAssets.Scripts.Unity.Bridge;
 using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Towers;

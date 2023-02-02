@@ -1,5 +1,5 @@
-﻿using Assets.Scripts.Simulation.Towers.Behaviors;
-using Assets.Scripts.Simulation.Towers.Projectiles.Behaviors;
+﻿using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
+using Il2CppAssets.Scripts.Simulation.Towers.Projectiles.Behaviors;
 using BTD_Mod_Helper.Api;
 
 namespace IndustrialFarmer.Patches;

@@ -1,8 +1,7 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Models.Towers.Behaviors;
-using Assets.Scripts.Unity;
+﻿using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Models.Towers.Behaviors;
+using Il2CppAssets.Scripts.Unity;
 using BTD_Mod_Helper.Api.Towers;
-using IndustrialFarmer.Patches;
 
 namespace IndustrialFarmer;
 
@@ -28,9 +27,6 @@ public class IndustrialFarmer : ModHero
     public override int MaxLevel => 20;
     public override float XpRatio => 1.0f;
 
-    /// <summary>
-    ///     <seealso cref="TowerCreation.UnityToSimulation_CreateTowerAt.Postfix" />
-    /// </summary>
     /// <param name="towerModel"></param>
     public override void ModifyBaseTowerModel(TowerModel towerModel)
     {
@@ -41,4 +37,6 @@ public class IndustrialFarmer : ModHero
         towerModel.radius = quincy.radius;
         towerModel.footprint = quincy.footprint.Duplicate();
     }
+
+    public const string IndustrialFarmerDiscount = "IndustrialFarmerDiscount";
 }

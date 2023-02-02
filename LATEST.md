@@ -1,1 +1,1 @@
-- Switched to a Tower Creation patch without side effects
+- Fixed for BTD6 v34 / ML 0.6.0

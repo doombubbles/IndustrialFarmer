@@ -1,14 +1,13 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Simulation.Towers.Behaviors;
-using Assets.Scripts.Simulation.Track;
+﻿using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
+using Il2CppAssets.Scripts.Simulation.Track;
 
 namespace IndustrialFarmer.Patches;
 
 public class WaterFreezing
 {
     private static TowerModel? currentTowerModel;
-
-
+    
     [HarmonyPatch(typeof(Map), nameof(Map.ZoneAllowsPlacement))]
     internal class Map_ZoneAllowsPlacement
     {

@@ -1,16 +1,15 @@
-﻿using Assets.Scripts.Models.Towers;
-using Assets.Scripts.Simulation.Input;
-using Assets.Scripts.Simulation.Towers;
-using Assets.Scripts.Simulation.Towers.Behaviors;
-using Assets.Scripts.Unity.Bridge;
-using BuffQuery = Assets.Scripts.Simulation.Towers.Buffs.BuffQuery;
+using Il2CppAssets.Scripts.Models.Towers;
+using Il2CppAssets.Scripts.Simulation.Input;
+using Il2CppAssets.Scripts.Simulation.Towers;
+using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
+using Il2CppAssets.Scripts.Unity.Bridge;
+using Il2CppSystem.Collections.Generic;
+using BuffQuery = Il2CppAssets.Scripts.Simulation.Towers.Buffs.BuffQuery;
 
 namespace IndustrialFarmer.Patches;
 
-public class Discounts
+public static class Discounts
 {
-    public const string IndustrialFarmerDiscount = "IndustrialFarmerDiscount";
-
     private static TowerModel? discountingTower;
 
 
@@ -24,14 +23,14 @@ public class Discounts
         }
     }
 
-
-    [HarmonyPatch(typeof(TowerInventory), nameof(TowerInventory.GetTowerDiscount))]
-    internal class TowerInventory_GetTowerDiscount
+    
+    [HarmonyPatch(typeof(TowerInventory), nameof(TowerManager.GetTowerCost))]
+    internal class TowerManager_GetTowerCost
     {
         [HarmonyPrefix]
-        internal static void Prefix(TowerModel def)
+        internal static void Prefix(TowerModel tower)
         {
-            discountingTower = def;
+            discountingTower = tower;
         }
     }
 
@@ -39,17 +38,15 @@ public class Discounts
     internal class TowerManager_GetZoneDiscount
     {
         [HarmonyPostfix]
-        internal static void Postfix(TowerManager __instance,
-            ref Il2CppSystem.Collections.Generic.Dictionary<string, Il2CppSystem.Collections.Generic.List<DiscountZone>>
-                __result)
+        internal static void Postfix(ref Dictionary<string, List<DiscountZone>> __result)
         {
             if (__result != null &&
                 discountingTower != null &&
                 discountingTower.baseId != TowerType.BananaFarm)
             {
-                if (__result.ContainsKey(IndustrialFarmerDiscount))
+                if (__result.ContainsKey(IndustrialFarmer.IndustrialFarmerDiscount))
                 {
-                    __result[IndustrialFarmerDiscount].Clear();
+                    __result[IndustrialFarmer.IndustrialFarmerDiscount].Clear();
                 }
             }
 
@@ -62,18 +59,14 @@ public class Discounts
     internal class Tower_AddDiscountZoneBuffs
     {
         [HarmonyPostfix]
-        internal static void Postfix(Tower __instance,
-            ref Il2CppSystem.Collections.Generic.List<BuffQuery> __result)
+        internal static void Postfix(Tower __instance, ref IEnumerable<BuffQuery> __result)
         {
-            if (__result != null && __instance.towerModel.baseId != TowerType.BananaFarm)
+            if (__result == null || __instance.towerModel.baseId == TowerType.BananaFarm) return;
+
+            foreach (var buffQuery in __result.ToList().Where(buffQuery =>
+                         buffQuery != null && buffQuery.buffIndicator.name.Contains(nameof(IndustrialFarmer))))
             {
-                foreach (var buffQuery in __result)
-                {
-                    if (buffQuery != null && buffQuery.buffIndicator.name.Contains(nameof(IndustrialFarmer)))
-                    {
-                        buffQuery.canCurrentlyBuff = false;
-                    }
-                }
+                buffQuery.canCurrentlyBuff = false;
             }
         }
     }
