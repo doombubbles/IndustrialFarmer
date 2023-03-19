@@ -4,7 +4,7 @@ using Il2CppAssets.Scripts.Simulation.Towers;
 using Il2CppAssets.Scripts.Simulation.Towers.Behaviors;
 using Il2CppAssets.Scripts.Unity.Bridge;
 using Il2CppSystem.Collections.Generic;
-using BuffQuery = Il2CppAssets.Scripts.Simulation.Towers.Buffs.BuffQuery;
+using Il2CppSystem.Linq;
 
 namespace IndustrialFarmer.Patches;
 
@@ -63,7 +63,7 @@ public static class Discounts
         {
             if (__result == null || __instance.towerModel.baseId == TowerType.BananaFarm) return;
 
-            foreach (var buffQuery in __result.ToList().Where(buffQuery =>
+            foreach (var buffQuery in __result.ToArray().Where(buffQuery =>
                          buffQuery != null && buffQuery.buffIndicator.name.Contains(nameof(IndustrialFarmer))))
             {
                 buffQuery.canCurrentlyBuff = false;
