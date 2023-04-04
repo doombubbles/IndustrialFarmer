@@ -12,9 +12,12 @@ public class WaterFreezing
     internal class Map_ZoneAllowsPlacement
     {
         [HarmonyPrefix]
-        internal static void Prefix(Map __instance, TowerModel tm)
+        internal static void Prefix(IPlaceableEntity pe)
         {
-            currentTowerModel = tm;
+            if (pe.Is(out TowerModel tm))
+            {
+                currentTowerModel = tm;
+            }
         }
 
         [HarmonyPostfix]
