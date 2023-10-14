@@ -69,8 +69,11 @@ public class Levels
             attack.RemoveBehavior<TargetCloseModel>();
             attack.RemoveBehavior<TargetLastModel>();
 
+            var splat = Game.instance.model.GetTower(TowerType.GlueGunner, 3, 2)
+                .GetDescendant<CreateEffectOnContactModel>().effectModel.assetId;
             var effectModel = attack.GetDescendant<CreateEffectOnExhaustFractionModel>().effectModel;
-            effectModel.assetId = CreatePrefabReference<PesticideSplatter>();
+            effectModel.assetId = splat;
+            effectModel.scale = 3f;
 
             var projectile = attack.GetDescendant<CreateProjectileOnExhaustFractionModel>().projectile;
             projectile.RemoveBehavior<DamageModel>();
@@ -95,13 +98,11 @@ public class Levels
 
         public override void ApplyUpgrade(TowerModel towerModel)
         {
-            towerModel.AddBehavior(new FreeUpgradeSupportModel("FreeUpgradesSupportModel_", 1,
-                "IndustrialFarmer:FreeUpgrades",
-                new Il2CppReferenceArray<TowerFilterModel>(new TowerFilterModel[]
+            towerModel.AddBehavior(new FreeUpgradeSupportModel("", 1,
+                "IndustrialFarmer:FreeUpgrades",new []
                 {
-                    new FilterInBaseTowerIdModel("FilterInBaseTowerIdModel_",
-                        new Il2CppStringArray(new[] { TowerType.BananaFarm }))
-                })));
+                    new FilterInBaseTowerIdModel("", new[] { TowerType.BananaFarm })
+                }));
         }
     }
 
@@ -114,7 +115,7 @@ public class Levels
 
         public override void ApplyUpgrade(TowerModel towerModel)
         {
-            towerModel.AddBehavior(new FreezeNearbyWaterModel("FreezeNearbyWaterModel_", towerModel.range, 1,
+            towerModel.AddBehavior(new FreezeNearbyWaterModel("", towerModel.range, 1,
                 new PrefabReference()));
         }
     }
@@ -152,7 +153,7 @@ public class Levels
 
         public override void ApplyUpgrade(TowerModel towerModel)
         {
-            towerModel.AddBehavior(new DiscountZoneModel("DiscountZoneModel_", .1f, 1,
+            towerModel.AddBehavior(new DiscountZoneModel("", .1f, 1,
                 IndustrialFarmer.IndustrialFarmerDiscount,
                 "IndustrialFarmer", false, 0, "IndustrialFarmer", GetTextureGUID("IndustrialFarmer-Icon")));
         }
@@ -189,16 +190,17 @@ public class Levels
             var shrink = bma.GetAttackModel(2).Duplicate();
 
             var filterModels = shrink.GetBehavior<AttackFilterModel>().filters.ToList();
-            filterModels.Add(new FilterOutTagModel("FilterOutTagModel_1", "Red", new Il2CppStringArray(0)));
-            filterModels.Add(new FilterOutTagModel("FilterOutTagModel_2", "Blue", new Il2CppStringArray(0)));
-            filterModels.Add(new FilterOutTagModel("FilterOutTagModel_3", "Green", new Il2CppStringArray(0)));
-            filterModels.Add(new FilterOutTagModel("FilterOutTagModel_4", "Ddt", new Il2CppStringArray(0)));
-            filterModels.Add(new FilterOutTagModel("FilterOutTagModel_5", "Zomg", new Il2CppStringArray(0)));
+            filterModels.Add(new FilterOutTagModel("1", BloonTag.Red, new Il2CppStringArray(0)));
+            filterModels.Add(new FilterOutTagModel("2", BloonTag.Blue, new Il2CppStringArray(0)));
+            filterModels.Add(new FilterOutTagModel("3", BloonTag.Green, new Il2CppStringArray(0)));
+            filterModels.Add(new FilterOutTagModel("4", BloonTag.Ddt, new Il2CppStringArray(0)));
+            filterModels.Add(new FilterOutTagModel("5", BloonTag.Zomg, new Il2CppStringArray(0)));
 
             var projectile = shrink.GetDescendant<CreateProjectileOnExhaustFractionModel>().projectile;
             projectile.radius = 50;
             projectile.GetBehavior<MorphBloonModel>().bloonId = BloonType.Green;
             projectile.GetDescendants<FilterInvisibleModel>().ForEach(model => model.isActive = false);
+            projectile.pierce += 100;
 
             var abilityModel = towerModel.GetAbility().Duplicate();
             abilityModel.name = "AbilityModel_GreenRevolution";
@@ -307,8 +309,8 @@ public class Levels
 
             var attackFilterModel = towerModel.GetAbility(1).GetDescendant<AttackFilterModel>();
             var filterModels = attackFilterModel.filters.ToList();
-            filterModels.RemoveAll(model => model.IsType<FilterOutTagModel>(out var tag) && tag.tag == "Ddt");
-            filterModels.RemoveAll(model => model.IsType<FilterOutTagModel>(out var tag) && tag.tag == "Zomg");
+            filterModels.RemoveAll(model => model.IsType<FilterOutTagModel>(out var tag) && tag.tag == BloonTag.Ddt);
+            filterModels.RemoveAll(model => model.IsType<FilterOutTagModel>(out var tag) && tag.tag == BloonTag.Zomg);
             attackFilterModel.filters = filterModels.ToIl2CppReferenceArray();
         }
     }
@@ -366,7 +368,7 @@ public class Levels
             abilityModel.Cooldown = 45;
 
             var projectile = abilityModel.GetDescendant<CreateProjectileOnExhaustFractionModel>().projectile;
-            projectile.pierce += 100;
+            projectile.pierce += 700;
         }
     }
 }

@@ -7,6 +7,7 @@ using IndustrialFarmer;
 
 [assembly: MelonInfo(typeof(IndustrialFarmerMod), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
+[assembly: MelonOptionalDependencies("AbilityChoice")]
 
 namespace IndustrialFarmer;
 
