@@ -1,1 +1,1 @@
-- Fixed banana/crate worth bonuses for v39
+- Fixed for BTD6 v42

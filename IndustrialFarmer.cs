@@ -23,8 +23,6 @@ public class IndustrialFarmer : ModHero
     public override string BackgroundStyle => TowerType.Etienne; // Yellow colored
     public override string GlowStyle => TowerType.StrikerJones; // Yellow colored
 
-
-    public override int MaxLevel => 20;
     public override float XpRatio => 1.0f;
 
     /// <param name="towerModel"></param>

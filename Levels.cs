@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-using Il2CppAssets.Scripts.Models.Bloons.Behaviors;
+﻿using Il2CppAssets.Scripts.Models.Bloons.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors.Abilities.Behaviors;
@@ -8,10 +7,10 @@ using Il2CppAssets.Scripts.Models.Towers.Filters;
 using Il2CppAssets.Scripts.Models.Towers.Projectiles.Behaviors;
 using Il2CppAssets.Scripts.Models.Towers.TowerFilters;
 using Il2CppAssets.Scripts.Unity;
-using Il2CppAssets.Scripts.Utils;
 using BTD_Mod_Helper.Api.Enums;
 using BTD_Mod_Helper.Api.Towers;
 using Il2CppInterop.Runtime.InteropTypes.Arrays;
+using Il2CppNinjaKiwi.Common.ResourceUtils;
 
 namespace IndustrialFarmer;
 
@@ -99,7 +98,7 @@ public class Levels
         public override void ApplyUpgrade(TowerModel towerModel)
         {
             towerModel.AddBehavior(new FreeUpgradeSupportModel("", 1,
-                "IndustrialFarmer:FreeUpgrades",new []
+                "IndustrialFarmer:FreeUpgrades", new[]
                 {
                     new FilterInBaseTowerIdModel("", new[] { TowerType.BananaFarm })
                 }));
