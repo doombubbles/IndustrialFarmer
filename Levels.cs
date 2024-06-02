@@ -82,7 +82,7 @@ public class Levels
             projectile.GetBehavior<ProjectileFilterModel>().filters = projectile
                 .GetBehavior<ProjectileFilterModel>().filters
                 .RemoveItemOfType<FilterModel, FilterWithChanceModel>();
-            projectile.collisionPasses = new[] { -1, 0 };
+            projectile.collisionPasses = new[] {-1, 0};
             projectile.filters = projectile.GetBehavior<ProjectileFilterModel>().filters;
             projectile.radius = 50;
             projectile.AddBehavior(dot);
@@ -100,7 +100,7 @@ public class Levels
             towerModel.AddBehavior(new FreeUpgradeSupportModel("", 1,
                 "IndustrialFarmer:FreeUpgrades", new[]
                 {
-                    new FilterInBaseTowerIdModel("", new[] { TowerType.BananaFarm })
+                    new FilterInBaseTowerIdModel("", new[] {TowerType.BananaFarm})
                 }));
         }
     }
@@ -154,7 +154,8 @@ public class Levels
         {
             towerModel.AddBehavior(new DiscountZoneModel("", .1f, 1,
                 IndustrialFarmer.IndustrialFarmerDiscount,
-                "IndustrialFarmer", false, 0, "IndustrialFarmer", GetTextureGUID("IndustrialFarmer-Icon")));
+                "IndustrialFarmer", false, 0, "IndustrialFarmer", GetTextureGUID("IndustrialFarmer-Icon"), "", "",
+                false));
         }
     }
 

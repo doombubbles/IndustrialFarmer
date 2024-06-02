@@ -1,9 +1,10 @@
+<h1 align="center">
 <a href="https://github.com/doombubbles/IndustrialFarmer/releases/latest/download/IndustrialFarmer.dll">
     <img align="left" alt="Icon" height="90" src="IndustrialFarmer-Icon.png">
     <img align="right" alt="Download" height="75" src="https://raw.githubusercontent.com/gurrenm3/BTD-Mod-Helper/master/BloonsTD6%20Mod%20Helper/Resources/DownloadBtn.png">
 </a>
-
-<h1 align="center">Norman, The Industrial Farmer</h1>
+Norman, The Industrial Farmer
+</h1>
 
 ### This is my example custom hero for Bloons TD 6.
 
