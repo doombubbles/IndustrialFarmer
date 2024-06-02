@@ -115,7 +115,7 @@ public class Levels
         public override void ApplyUpgrade(TowerModel towerModel)
         {
             towerModel.AddBehavior(new FreezeNearbyWaterModel("", towerModel.range, 1,
-                new PrefabReference()));
+                new PrefabReference("")));
         }
     }
 
