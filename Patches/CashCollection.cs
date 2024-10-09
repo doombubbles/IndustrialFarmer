@@ -61,7 +61,7 @@ public class CashCollection
         internal static void Prefix(Cash __instance)
         {
             var cashModel = __instance.cashModel.Duplicate();
-            if (CrateGUIDs.Contains(__instance.projectile.display.displayModel.display.guidRef))
+            if (CrateGUIDs.Contains(__instance.projectile.Display.displayModel.display.guidRef))
             {
                 cashModel.bonusMultiplier += crateBonus;
             }

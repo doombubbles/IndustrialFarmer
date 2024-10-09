@@ -1,1 +1,1 @@
-- Fixed obscure crash with Ultimate Crosspathing
+- Fixed for BTD6 v45

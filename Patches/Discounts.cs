@@ -17,9 +17,9 @@ public static class Discounts
     internal class TowerToSimulation_GetUpgradeCost
     {
         [HarmonyPrefix]
-        internal static void Prefix(TowerToSimulation __instance)
+        internal static void Prefix(TowerToSimulation? __instance)
         {
-            discountingTower = __instance.Def;
+            discountingTower = __instance?.Def;
         }
     }
 
