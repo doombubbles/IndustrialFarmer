@@ -1,4 +1,5 @@
 ﻿using Il2Cpp;
+using Il2CppAssets.Scripts.Models;
 using Il2CppAssets.Scripts.Simulation.Bloons;
 using Il2CppAssets.Scripts.Simulation.Towers.Projectiles.Behaviors;
 
