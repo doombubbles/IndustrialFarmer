@@ -4,6 +4,7 @@ using Il2CppAssets.Scripts.Unity.Bridge;
 using BTD_Mod_Helper;
 using BTD_Mod_Helper.Api;
 using BTD_Mod_Helper.Api.Towers;
+using Il2CppAssets.Scripts.Unity.UI_New.InGame;
 
 namespace IndustrialFarmer.Patches;
 
@@ -18,7 +19,7 @@ public class TowerCreation
             if (__instance.towerModelName.StartsWith(ModContent.GetInstance<IndustrialFarmer>().Id))
             {
                 uts.Simulation.GetTowerInventory(__instance.initiatingPlayerNumber)
-                    .AddFreeTowers(TowerType.BananaFarm, 1, "", 0);
+                    .AddFreeTowers(TowerType.BananaFarm, 1, "", 0, InGame.Bridge.Simulation);
             }
         }
     }

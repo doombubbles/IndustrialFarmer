@@ -1,1 +1,5 @@
-- Fixed patches for BTD6 v46
+- Fixed patches for BTD6 v47
+- Now has a loadout for Rogue Legends
+  - The Unspoken Heroes Common
+  - 0/0/0 Banana Farm
+  - 0/0/2 Engineer

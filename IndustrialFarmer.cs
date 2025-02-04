@@ -1,4 +1,5 @@
-﻿using Il2CppAssets.Scripts.Models.Towers;
+﻿using System.Collections.Generic;
+using Il2CppAssets.Scripts.Models.Towers;
 using Il2CppAssets.Scripts.Models.Towers.Behaviors;
 using Il2CppAssets.Scripts.Unity;
 using BTD_Mod_Helper.Api.Towers;
@@ -24,6 +25,13 @@ public class IndustrialFarmer : ModHero
     public override string GlowStyle => TowerType.StrikerJones; // Yellow colored
 
     public override float XpRatio => 1.0f;
+
+    public override string RogueStarterArtifact => "TheUnspokenHeroes1";
+    public override IEnumerable<(string, int[])> RogueStarterInstas =>
+    [
+        (TowerType.BananaFarm, [0, 0, 0]),
+        (TowerType.EngineerMonkey, [0, 0, 2])
+    ];
 
     /// <param name="towerModel"></param>
     public override void ModifyBaseTowerModel(TowerModel towerModel)
