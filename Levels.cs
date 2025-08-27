@@ -115,7 +115,7 @@ public class Levels
         public override void ApplyUpgrade(TowerModel towerModel)
         {
             towerModel.AddBehavior(new FreezeNearbyWaterModel("", towerModel.range, 1,
-                new PrefabReference("")));
+                new PrefabReference(""), 0));
         }
     }
 
@@ -153,8 +153,7 @@ public class Levels
         public override void ApplyUpgrade(TowerModel towerModel)
         {
             towerModel.AddBehavior(new DiscountZoneModel("", .1f, 1,
-                IndustrialFarmer.IndustrialFarmerDiscount,
-                "IndustrialFarmer", false, 0, "IndustrialFarmer", GetTextureGUID("IndustrialFarmer-Icon"), "", "",
+                IndustrialFarmer.IndustrialFarmerDiscount, false, 6, 0, "", "", TowerType.BananaFarm, "", false,
                 false));
         }
     }
