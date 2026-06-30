@@ -1,0 +1,31 @@
+[package]
+name = "IndustrialFarmer"
+namespace = "doombubbles"
+description = "A custom hero who collects your bananas and helps you expand your farming operations."
+websiteUrl = "https://github.com/doombubbles/IndustrialFarmer"
+
+[package.dependencies]
+LavaGang-MelonLoader = "0.7.3"
+doombubbles-Btd6ModHelper = "3.6.5"
+
+[build]
+icon = "./IndustrialFarmer-Icon.png"
+readme = "./README.md"
+outdir = "bin"
+
+[[build.copy]]
+source = "./bin/Release/IndustrialFarmer.dll"
+target = "IndustrialFarmer.dll"
+
+[[build.copy]]
+source = "./CHANGELOG.md"
+target = "./CHANGELOG.md"
+
+[[build.copy]]
+source = "./LICENSE"
+target = "./LICENSE"
+
+[publish]
+repository = "https://thunderstore.io"
+communities = ["bloons-td-6"]
+categories = ["mods"]

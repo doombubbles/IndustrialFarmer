@@ -1,4 +1,4 @@
-﻿global using HarmonyLib;
+global using HarmonyLib;
 global using MelonLoader;
 global using BTD_Mod_Helper.Extensions;
 global using System.Linq;
@@ -7,6 +7,7 @@ using IndustrialFarmer;
 
 [assembly: MelonInfo(typeof(IndustrialFarmerMod), ModHelperData.Name, ModHelperData.Version, ModHelperData.RepoOwner)]
 [assembly: MelonGame("Ninja Kiwi", "BloonsTD6")]
+[assembly: MelonGame("Ninja Kiwi", "BloonsTD6-Epic")]
 [assembly: MelonOptionalDependencies("AbilityChoice")]
 
 namespace IndustrialFarmer;
